@@ -1,0 +1,48 @@
+After increasing your Azure Virtual Machine's (VM) disk size from 127 GiB to 256 GiB in the Azure Portal, you need to extend the partition within the Windows operating system to utilize the additional space. Here's how to do it via Remote Desktop Protocol (RDP):
+
+**1. Connect to Your VM via RDP:**
+
+- **Using Remote Desktop Connection:**
+  - Open the Remote Desktop Connection application on your local machine.
+  - Enter your VM's public IP address or DNS name.
+  - Click **Connect** and provide your VM's username and password when prompted.
+
+**2. Open Disk Management:**
+
+- Once connected to your VM:
+  - Right-click on the **Start** button.
+  - Select **Disk Management** from the context menu.
+
+**3. Identify the Disk with Unallocated Space:**
+
+- In the Disk Management window:
+  - Locate your primary disk (usually **Disk 0**).
+  - You should see unallocated space corresponding to the increased disk size.
+
+**4. Extend the Volume:**
+
+- To utilize the unallocated space:
+  - Right-click on the **C:** drive (or the primary partition you wish to extend).
+  - Select **Extend Volume** from the context menu.
+  - The **Extend Volume Wizard** will open.
+    - Click **Next**.
+    - The wizard will automatically select the maximum available space.
+    - Click **Next**, then **Finish** to complete the process.
+
+**5. Verify the Changes:**
+
+- After extending the volume:
+  - In Disk Management, confirm that the **C:** drive now reflects the total increased size (256 GiB).
+  - You can also check the drive properties to verify the updated capacity.
+
+**Important Considerations:**
+
+- **Backup:** Always back up your data before performing disk operations to prevent data loss.
+
+- **Downtime:** Extending the volume does not require a reboot, but it's advisable to perform such operations during maintenance windows to avoid potential disruptions.
+
+- **Disk Types:** Ensure that the disk type supports resizing operations. Some disk types may have limitations or specific requirements.
+
+
+
+ 
